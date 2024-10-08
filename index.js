@@ -5,6 +5,9 @@ const PORT = process.env.PORT;
 const server = express();
 const api = process.env.URL;
 
+const database = require('./src/config/database');
+
+database();
 server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
