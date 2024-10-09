@@ -6,7 +6,8 @@ const server = express();
 const api = process.env.URL;
 
 const database = require('./src/config/database');
-const user = require('./src/routes/user')
+const user = require('./src/routes/user');
+const appointment = require('./src/routes/appointment');
 
 database();
 server.use(cors());
@@ -14,6 +15,7 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 server.use(`${api}/auth`, user);
+server.use(`${api}/appointment`, appointment);
 
 server.get('/', (req, res) => {
     res.send('BARBERSHOP SERVER')
