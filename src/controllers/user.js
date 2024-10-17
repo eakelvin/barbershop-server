@@ -55,4 +55,16 @@ const logout = asyncHandler(async (req, res) => {
     })
 })
 
-module.exports = { login, register, logout }
+const users = asyncHandler(async (req, res) => {
+    try {
+        const users = await User.find()
+        res.json(users)
+    } catch (error) {
+        res.status(500).json({ 
+            error: 'Server Error'
+        })
+    }
+
+})
+
+module.exports = { login, register, logout, users }
