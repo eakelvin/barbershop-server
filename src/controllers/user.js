@@ -85,7 +85,6 @@ const updateUser = asyncHandler(async (req, res) => {
     }
 })
 
-
 const users = asyncHandler(async (req, res) => {
     try {
         const users = await User.find()

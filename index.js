@@ -12,7 +12,9 @@ const appointment = require('./src/routes/appointment');
 const contact = require('./src/routes/contact');
 
 database();
-server.use(cors());
+server.use(cors({
+    credentials: true
+}));  
 // server.use(cors({
 //     origin: [
 //         'http://localhost:5173',
