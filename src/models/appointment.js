@@ -10,7 +10,7 @@ const AppointmentSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    appointment: {
+    request: {
         type: String,
         required: true
     },
