@@ -3,7 +3,11 @@ const jwtKey = process.env.JWT_SECRET
 const environment = process.env.NODE_ENV
 
 const generateToken = (res, userId) => {
-    const token = jwt.sign({ userId }, jwtKey, {expiresIn: '1h'})
+    const token = jwt.sign(
+        { userId }, 
+        jwtKey, 
+        {expiresIn: '1h'}
+    )
 
     res.cookie('jwt', token, {
         httpOnly: true,
