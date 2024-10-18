@@ -11,10 +11,7 @@ const user = require('./src/routes/user');
 const appointment = require('./src/routes/appointment');
 const contact = require('./src/routes/contact');
 
-database();
-// server.use(cors({
-//     credentials: true
-// }));  
+database();  
 server.use(cors({
     origin: [
         'http://localhost:5173',
