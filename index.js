@@ -12,17 +12,17 @@ const appointment = require('./src/routes/appointment');
 const contact = require('./src/routes/contact');
 
 database();
-server.use(cors({
-    credentials: true
-}));  
 // server.use(cors({
-//     origin: [
-//         'http://localhost:5173',
-//         'https://barbershop-six-red.vercel.app' 
-//     ],
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     credentials: true,
-// }))
+//     credentials: true
+// }));  
+server.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://barbershop-six-red.vercel.app' 
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}))
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(cookieParser())
