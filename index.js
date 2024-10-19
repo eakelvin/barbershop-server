@@ -22,7 +22,7 @@ server.use(cors({
 }))
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
-server.use(cookieParser())
+server.use(cookieParser());
 
 server.use(`${api}/auth`, user);
 server.use(`${api}/appointment`, appointment);
