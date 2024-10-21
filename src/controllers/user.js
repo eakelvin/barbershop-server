@@ -1,6 +1,7 @@
 const asyncHandler = require('express-async-handler')
 const User = require('../models/user')
 const generateToken = require('../utils/token')
+const environment = process.env.NODE_ENV
 
 const register = asyncHandler(async (req, res) => {
     const { name, email, password } = req.body
