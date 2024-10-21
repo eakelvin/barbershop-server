@@ -4,7 +4,7 @@ const generateToken = require('../utils/token')
 
 const register = asyncHandler(async (req, res) => {
     const { name, email, password } = req.body
-    console.log(req.body);
+    // console.log(req.body);
     const existingUser = await User.findOne({ email })
     if (existingUser) {
         res.status(400)
@@ -31,6 +31,7 @@ const register = asyncHandler(async (req, res) => {
 
 const login = asyncHandler(async (req, res) => {
     const { email, password } = req.body
+    // console.log(req.body);
     const user = await User.findOne({ email })
     if (user && (await user.matchPassword(password))) {
         generateToken(res, user._id)

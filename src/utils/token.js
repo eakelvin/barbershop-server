@@ -9,10 +9,14 @@ const generateToken = (res, userId) => {
         {expiresIn: '1h'}
     )
 
+    // console.log("Generated Token:", token);
+
     res.cookie('jwt', token, {
         httpOnly: true,
-        secure: environment !== 'development',
-        sameSite: 'strict',
+        // secure: environment !== 'development',
+        secure: environment === 'development',
+        sameSite: "none",
+        // sameSite: 'strict',
         maxAge: 1 * 60 * 60 * 1000
     })
 }
