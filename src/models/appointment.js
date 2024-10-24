@@ -12,6 +12,9 @@ const AppointmentSchema = new mongoose.Schema({
     },
     request: {
         type: String,
+    },
+    service: {
+        type: String,
         required: true
     },
     date: {
